@@ -1,6 +1,6 @@
 <?php
 
-$array = ['aaa',2,3];
+$array = ['bus',2,3];
 // echo $array[1];
 
 echo '<pre>';
