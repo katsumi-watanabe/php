@@ -21,6 +21,19 @@
 //   echo '身長は' . $height . 'cmではありません';
 // }
 
+// if文は単体の方がわかりやすい
+
+$height = 94;
+
+if ($height >= 91){// 条件は数字
+  echo '身長は' . $height . 'cmです';
+}
+
+if ($height <= 90){// 条件は数字
+  echo '身長は' . $height . 'cmになります';
+}
+
+
 $signal = 'blue';
 
 if ($signal === 'red'){
@@ -32,9 +45,8 @@ if ($signal === 'red'){
 }
 
 $speed = 80;
-
 if ($signal === 'blue'){
-  if ($speed >= 0){
+  if ($speed >= 0){ // ネスト
     echo 'スピード違反';
   }
 }
