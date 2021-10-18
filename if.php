@@ -74,4 +74,11 @@ if (!empty($test)){
 // == 一致
 // ===　型も一致
 
+$signal_1 = 'red';
+$signal_2 = 'yellow';
+
+if($signal_1 === 'red' || $signal_2 === 'blue'){
+  echo '赤と青です';
+}
+
 ?>
