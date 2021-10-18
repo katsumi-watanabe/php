@@ -25,12 +25,16 @@
 
 $height = 94;
 
-if ($height >= 91){// 条件は数字
-  echo '身長は' . $height . 'cmです';
-}
+// if ($height >= 91){// 条件は数字
+//   echo '身長は' . $height . 'cmです';
+// }
 
-if ($height <= 90){// 条件は数字
-  echo '身長は' . $height . 'cmになります';
+// if ($height <= 90){// 条件は数字
+//   echo '身長は' . $height . 'cmになります';
+// }
+
+if ($height != 90){
+  echo '身長は90cmではありません。';
 }
 
 
