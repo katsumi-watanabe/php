@@ -74,11 +74,20 @@ if (!empty($test)){
 // == 一致
 // ===　型も一致
 
-$signal_1 = 'red';
-$signal_2 = 'yellow';
+// $signal_1 = 'red';
+// $signal_2 = 'yellow';
 
-if($signal_1 === 'red' || $signal_2 === 'blue'){
-  echo '赤と青です';
-}
+// if($signal_1 === 'red' || $signal_2 === 'blue'){
+//   echo '赤と青です';
+// }
+
+// 三項演算子
+// if else
+// 条件？　真：偽
+
+$math = 80;
+$comment = $math > 80 ? 'good' : 'not good';
+echo $comment;
+
 
 ?>
