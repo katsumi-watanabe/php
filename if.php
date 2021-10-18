@@ -37,23 +37,37 @@ if ($height != 90){
   echo '身長は90cmではありません。';
 }
 
+// データが入っているかどうか
+// isset empty is_null
 
-$signal = 'blue';
+$test = '1';
 
-if ($signal === 'red'){
-  echo '止まれ';
-} else if ($signal === 'yellow') {
-  echo '一旦停止';
-} else {
-  echo '進む';
+if (!empty($test)){
+  echo '変数は空ではありません';
 }
 
-$speed = 80;
-if ($signal === 'blue'){
-  if ($speed >= 0){ // ネスト
-    echo 'スピード違反';
-  }
-}
+// if (empty($test)){
+//   echo '変数は空です';
+// } else {
+//   echo '変数は空ではありません';
+// }
+
+// $signal = 'blue';
+
+// if ($signal === 'red'){
+//   echo '止まれ';
+// } else if ($signal === 'yellow') {
+//   echo '一旦停止';
+// } else {
+//   echo '進む';
+// }
+
+// $speed = 80;
+// if ($signal === 'blue'){
+//   if ($speed >= 0){ // ネスト
+//     echo 'スピード違反';
+//   }
+// }
 
 
 
