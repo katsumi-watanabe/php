@@ -18,20 +18,24 @@ foreach($members as $member => $value){
   echo $member . 'は' . $value . 'です';
 }
 
-echo '<br>';
 
 $members_2 = [
   '本田' => [
-  'height' => 170,
-  'hobby' => 'サッカー',
+    'height' => 170,
+    'hobby' => 'サッカー',
   ],
   '香川' => [
-  'height' => 165,
-  'hobby' => 'サッカー',
-  ]
-];
+    'height' => 165,
+    'hobby' => 'サッカー',
+    ]
+  ];
+  
+echo '<br>';
 
-foreach($members_2 as $member){
-  echo $member;
+foreach($members_2 as $member_1){
+  foreach($member_1 as $member => $value){
+  echo $member . 'は' . $value . 'です';
+  }
 }
+
 ?>
