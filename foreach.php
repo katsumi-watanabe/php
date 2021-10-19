@@ -7,7 +7,7 @@ $members = [
 ];
 
 foreach($members as $members){
-  
+  echo $members;
 }
 
 ?>
