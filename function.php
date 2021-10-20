@@ -48,7 +48,7 @@ echo $commentNumber;
 // 戻り値あり
 
 function sumPrice($int1, $int2){
-  $int = $int1 + $int2;
+  $int3 = $int1 + $int2;
   return $int3;
 }
 
