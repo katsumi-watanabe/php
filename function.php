@@ -28,4 +28,32 @@ function getComment($string){
 
 getComment($comment3);
 
+// インプット引数なし
+// アウトプット戻り値あり
+
+function getNumberOfComment(){
+  return 5;
+}
+
+$commentNumber = getNumberOfComment();
+
+echo getNumberOfComment();
+
+echo $commentNumber;
+
+// echo getNumberOfComment();
+// var_dump(getNumberOfComment());
+
+// 引数2つ
+// 戻り値あり
+
+function sumPrice($int1, $int2){
+  $int = $int1 + $int2;
+  return $int3;
+}
+
+$total = sumPrice(3,5);
+
+echo $total;
+
 ?>
