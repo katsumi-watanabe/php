@@ -30,9 +30,21 @@ if(!empty($_POST['btn_submit'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
-
+<?php if($pageFlag === 0) : ?>
+<!-- 入力画面 -->
+<form method="POST" action="input.php">
+氏名
+<input type="text" name="your_name">
+<br>
+メールアドレス
+<input type="email" name="email">
+<br>
+<input type="submit" name="btn_confirm" value="確認する">
+</form>
+<?php endif; ?>
 
 <?php if($pageFlag === 1) : ?>
 <!-- 確認画面 -->
@@ -55,18 +67,6 @@ if(!empty($_POST['btn_submit'])){
 <?php endif; ?>
 
 
-<?php if($pageFlag === 0) : ?>
-<!-- 入力画面 -->
-<form method="POST" action="input.php">
-氏名
-<input type="text" name="your_name">
-<br>
-メールアドレス
-<input type="email" name="email">
-<br>
-<input type="submit" name="btn_confirm" value="確認する">
-</form>
-<?php endif; ?>
 
 </body>
 
