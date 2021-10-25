@@ -12,7 +12,16 @@ if(!empty($_POST)){
 
 $pageFlag = 0;
 
+if(!empty($_POST['btn_confirm'])){
+  $pageFlag = 1;
+}
+
+if(!empty($_POST['btn_submit'])){
+  $pageFlag = 2;
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -34,7 +43,7 @@ $pageFlag = 0;
 メールアドレス
 <?php echo $_POST['email'];?>
 <br>
-<input type="submit" name="btn_confirm" value="確認する">
+<input type="submit" name="btn_submit" value="送信する">
 <input type="hidden" name="your_name" value="<?php echo $_POST['your_name'];?>">
 <input type="hidden" name="email" value="<?php echo $_POST['email'];?>">
 </form>
@@ -42,6 +51,7 @@ $pageFlag = 0;
 
 <?php if($pageFlag === 2) : ?>
 <!-- 完了画面 -->
+送信が完了しました。
 <?php endif; ?>
 
 
