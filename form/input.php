@@ -71,7 +71,7 @@ $token = $_SESSION['csrfToken'];
 <?php endif; ?>
 
 <?php if($pageFlag === 1) : ?>
-<?php if($_POST['csrf'] === $_SESSION['csrfToken']);?>
+<?php if($_POST['csrf'] === $_SESSION['csrfToken']) :?>
 
 <!-- 確認画面 -->
 <form method="POST" action="input.php">
@@ -89,13 +89,15 @@ $token = $_SESSION['csrfToken'];
 </form>
 
 <?php endif; ?>
+<?php endif; ?>
 
 
 <?php if($pageFlag === 2) : ?>
-  <?php if($_POST['csrf'] === $_SESSION['csrfToken']);?>
+<?php if($_POST['csrf'] === $_SESSION['csrfToken']) :?>
 <!-- 完了画面 -->
 送信が完了しました。
 <?php unset($_SESSION['csrfToken']); ?>
+<?php endif; ?>
 <?php endif; ?>
 
 </body>
