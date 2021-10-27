@@ -1,5 +1,8 @@
 <?php
 
+// CSRF 偽物のinput.php->悪意のあるページ
+session_start();
+
 // 重ねて表示することができない様に(透明のボタンを設置して変なURLに飛ばない様に帽子)
 header('X-FRAME-OPTIONS:DENY');
 
@@ -46,6 +49,14 @@ if(!empty($_POST['btn_submit'])){
 <body>
 
 <?php if($pageFlag === 0) : ?>
+<?php
+
+if(!isset($_SESSION['csrfToken'])){
+  $csrfToken =  bin2hex(random_bytes(32));
+  $_SESSION['csrfToken'] = $csrfToken;
+}
+$token = $_SESSION['csrfToken'];
+?>
 <!-- 入力画面 -->
 <form method="POST" action="input.php">
 氏名
@@ -55,6 +66,7 @@ if(!empty($_POST['btn_submit'])){
 <input type="email" name="email" value="<?php if(!empty($_POST['email'])){echo h($_POST['email']);}?>">
 <br>
 <input type="submit" name="btn_confirm" value="確認する">
+<input type="hidden" name="csrf" value="<?php echo $token?>">
 </form>
 <?php endif; ?>
 
