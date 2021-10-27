@@ -10,11 +10,11 @@ header('X-FRAME-OPTIONS:DENY');
 // スーパーグローバル変数 php 9種類
 // 連想配列
 
-// if(!empty($_POST)){
-//   echo '<pre>';
-//   var_dump($_POST);
-//   echo '</pre>';
-// }
+if(!empty($_SESSION)){
+  echo '<pre>';
+  var_dump($_SESSION);
+  echo '</pre>';
+}
 
 
 // jsコードが記入できない様に
@@ -71,6 +71,8 @@ $token = $_SESSION['csrfToken'];
 <?php endif; ?>
 
 <?php if($pageFlag === 1) : ?>
+<?php if($_POST['csrf'] === $_SESSION['csrfToken']);?>
+
 <!-- 確認画面 -->
 <form method="POST" action="input.php">
 氏名
@@ -83,15 +85,18 @@ $token = $_SESSION['csrfToken'];
 <input type="submit" name="btn_submit" value="送信する">
 <input type="hidden" name="your_name" value="<?php echo h($_POST['your_name']);?>">
 <input type="hidden" name="email" value="<?php echo h($_POST['email']);?>">
+<input type="hidden" name="csrf" value="<?php echo h($_POST['csrf']);?>">
 </form>
+
 <?php endif; ?>
+
 
 <?php if($pageFlag === 2) : ?>
+  <?php if($_POST['csrf'] === $_SESSION['csrfToken']);?>
 <!-- 完了画面 -->
 送信が完了しました。
+<?php unset($_SESSION['csrfToken']); ?>
 <?php endif; ?>
-
-
 
 </body>
 
