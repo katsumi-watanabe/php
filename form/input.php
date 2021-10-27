@@ -1,4 +1,9 @@
 <?php
+
+// 重ねて表示することができない様に(透明のボタンを設置して変なURLに飛ばない様に帽子)
+header('X-FRAME-OPTIONS:DENY');
+
+
 // スーパーグローバル変数 php 9種類
 // 連想配列
 
@@ -8,6 +13,8 @@
 //   echo '</pre>';
 // }
 
+
+// jsコードが記入できない様に
 function h($str){
   return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
