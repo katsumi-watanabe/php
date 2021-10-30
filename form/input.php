@@ -3,6 +3,8 @@
 // CSRF 偽物のinput.php->悪意のあるページ
 session_start();
 
+require 'validation.php';
+
 // 重ねて表示することができない様に(透明のボタンを設置して変なURLに飛ばない様に帽子)
 header('X-FRAME-OPTIONS:DENY');
 
@@ -26,8 +28,9 @@ function h($str){
 // input.php
 
 $pageFlag = 0;
+$errors = validation($_POST);
 
-if(!empty($_POST['btn_confirm'])){
+if(!empty($_POST['btn_confirm']) && empty($errors)){
   $pageFlag = 1;
 }
 
@@ -57,6 +60,16 @@ if(!isset($_SESSION['csrfToken'])){
 }
 $token = $_SESSION['csrfToken'];
 ?>
+
+<?php if(!empty($errors) && !empty($_POST['btn_confirm'])) : ?>
+  <?php echo '<ul>' ;?>
+  <?php
+    foreach($errors as $error){
+      echo '<li>' . $error . '</li>';
+    }
+  ?>
+  <?php echo '</ul>' ;?>
+<?php endif ;?>
 <!-- 入力画面 -->
 <form method="POST" action="input.php">
 氏名
