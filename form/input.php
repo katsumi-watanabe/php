@@ -10,9 +10,9 @@ header('X-FRAME-OPTIONS:DENY');
 // スーパーグローバル変数 php 9種類
 // 連想配列
 
-if(!empty($_SESSION)){
+if(!empty($_POST)){
   echo '<pre>';
-  var_dump($_SESSION);
+  var_dump($_POST);
   echo '</pre>';
 }
 
@@ -66,11 +66,12 @@ $token = $_SESSION['csrfToken'];
 <input type="email" name="email" value="<?php if(!empty($_POST['email'])){echo h($_POST['email']);}?>">
 <br>
 ホームページ
-<input type="url" name="email" value="<?php if(!empty($_POST['url'])){echo h($_POST['url']);}?>">
+<input type="url" name="url" value="<?php if(!empty($_POST['url'])){echo h($_POST['url']);}?>">
 <br>
 性別
 <input type="radio" name="gender" value="0">男性
 <input type="radio" name="gender" value="1">女性
+<br>
 年齢
 <select name="age">
   <option value="">選択してください</option>
