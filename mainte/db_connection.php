@@ -5,6 +5,7 @@ const DB_USER = 'php_user';
 const DB_PASSWORD = 'katsumi1124';
 
 // 例外処理(データ接続確認) Exception
+// ATTRアトリビュート(属性)
 try{
   $pdo = new PDO(DB_HOST, DB_USER, DB_PASSWORD, [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FRTCH_ASSOC, //連想配列
