@@ -217,6 +217,10 @@ $token = $_SESSION['csrfToken'];
 
 <?php if($pageFlag === 2) : ?>
 <?php if($_POST['csrf'] === $_SESSION['csrfToken']) :?>
+
+
+
+
 <!-- 完了画面 -->
 送信が完了しました。
 <?php unset($_SESSION['csrfToken']); ?>
