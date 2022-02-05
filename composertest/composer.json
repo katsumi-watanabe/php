@@ -1,15 +1,7 @@
 {
-    "name": "watanabekatsumi/composertest",
     "autoload": {
         "psr-4": {
-            "Watanabekatsumi\\Composertest\\": "src/"
+            "APP\\" : "app/"
         }
-    },
-    "authors": [
-        {
-            "name": "katsumi-watanabe",
-            "email": "ktm981124@gmail.com"
-        }
-    ],
-    "require": {}
+    }
 }
