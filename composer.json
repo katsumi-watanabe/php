@@ -1,0 +1,15 @@
+{
+    "name": "watanabekatsumi/php_test",
+    "autoload": {
+        "psr-4": {
+            "Watanabekatsumi\\PhpTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "katsumi-watanabe",
+            "email": "ktm981124@gmail.com"
+        }
+    ],
+    "require": {}
+}
