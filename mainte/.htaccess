@@ -1,3 +1,0 @@
-AuthType Basic
-AuthName "IDとパスワードを入力してください"
-AuthUserFile /Applications/MAMP/htdocs/php_test/mainte/.hppasswd
