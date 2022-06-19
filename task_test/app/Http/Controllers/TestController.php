@@ -19,8 +19,6 @@ class TestController extends Controller
         ->select('id')->
         get();
 
-        dd($tests);
-
         return view('tests.test', compact('values'));
     }
 }
