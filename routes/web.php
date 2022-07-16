@@ -19,12 +19,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('tests/test', 'TestController@index');
+Route::get('tests/test', 'App\HTTP\Controllers\TestController@index');
 
 Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
     Route::get('index', 'App\HTTP\Controllers\ContactFormController@index')->name('contact.index');
+    Route::get('create', 'App\HTTP\Controllers\ContactFormController@create')->name('contact.create');
+    // Route::get('index', 'App\HTTP\Controllers\ContactFormController@index')->name('contact.index');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', 'HomeController@index'])->name('home');
